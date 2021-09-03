@@ -1,0 +1,24 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ werkzeug - INFO - 03-09-2021:13:13:12 - * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit) 
+ werkzeug - INFO - 03-09-2021:13:13:12 - * Restarting with stat 
+ werkzeug - WARNING - 03-09-2021:13:13:12 - * Debugger is active! 
+ werkzeug - INFO - 03-09-2021:13:13:12 - * Debugger PIN: 282-805-314 
+ werkzeug - INFO - 03-09-2021:13:14:38 -172.17.0.1 - - [03/Sep/2021 13:14:38] "GET / HTTP/1.1" 200 - 
+ app - INFO - 03-09-2021:13:14:43 -About Page is retrieved  
+ werkzeug - INFO - 03-09-2021:13:14:43 -172.17.0.1 - - [03/Sep/2021 13:14:43] "GET /about HTTP/1.1" 200 - 
+ werkzeug - INFO - 03-09-2021:13:14:48 -172.17.0.1 - - [03/Sep/2021 13:14:48] "GET /create HTTP/1.1" 200 - 
+ app - INFO - 03-09-2021:13:15:04 -A new Article: "UDACITY PROJECT" is created 
+ werkzeug - INFO - 03-09-2021:13:15:04 -172.17.0.1 - - [03/Sep/2021 13:15:04] "POST /create HTTP/1.1" 302 - 
+ werkzeug - INFO - 03-09-2021:13:15:04 -172.17.0.1 - - [03/Sep/2021 13:15:04] "GET / HTTP/1.1" 200 - 
+ app - INFO - 03-09-2021:13:15:12 -A non-existing article is accessed and a 404 page is returned. 
+ werkzeug - INFO - 03-09-2021:13:15:12 -172.17.0.1 - - [03/Sep/2021 13:15:12] "GET /89 HTTP/1.1" 404 - 
+ werkzeug - INFO - 03-09-2021:13:15:26 -172.17.0.1 - - [03/Sep/2021 13:15:26] "GET / HTTP/1.1" 200 - 
+ app - INFO - 03-09-2021:13:17:50 -An existing Article: "2020 CNCF Annual Report" is retrieved 
+ werkzeug - INFO - 03-09-2021:13:17:50 -172.17.0.1 - - [03/Sep/2021 13:17:50] "GET /1 HTTP/1.1" 200 - 
+ app - ERROR - 03-09-2021:13:20:43 -SQLite error: no such table: posts 
+ app - INFO - 03-09-2021:13:20:43 -status unhealthy 
+ werkzeug - INFO - 03-09-2021:13:20:43 -172.17.0.1 - - [03/Sep/2021 13:20:43] "GET /healthz HTTP/1.1" 500 - 
