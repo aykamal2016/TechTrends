@@ -49,5 +49,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: v1
+          tags: aykamal/techtrends:v1
           #${{ steps.meta.outputs.tags }}
