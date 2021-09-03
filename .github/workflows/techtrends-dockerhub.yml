@@ -35,11 +35,11 @@ jobs:
           username: aykamal 
           password: Asdzxcqwe@123 
           #${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-          images:aykamal/techtrends
+      #-
+     #   name: Docker meta
+   #     id: meta
+    #    uses: docker/metadata-action@v1
+     #     images:aykamal/techtrends
                     
       -
         name: Build and push
@@ -49,4 +49,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: v1
+          #${{ steps.meta.outputs.tags }}
