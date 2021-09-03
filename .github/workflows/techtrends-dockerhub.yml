@@ -8,7 +8,7 @@ name: TechTrends - Package with Docker
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -31,8 +31,10 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          #${{ secrets.DOCKERHUB_USERNAME }}
+          username: aykamal 
+          password: Asdzxcqwe@123 
+          #${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
