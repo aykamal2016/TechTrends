@@ -23,6 +23,10 @@ jobs:
       -
         name: Checkouts
         uses: actions/checkout@v2
+      -  
+        name: release checkout
+        run: git checkout -b release/v1
+        
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -42,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
           images:aykamal/techtrends
-                  
+     
       -
         name: Build and push
         uses: docker/build-push-action@v2
