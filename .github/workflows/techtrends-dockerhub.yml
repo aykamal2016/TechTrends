@@ -40,7 +40,7 @@ jobs:
       -
         name: Docker meta
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v3.5.0
           images:aykamal/techtrends:v1.0
           tags:|
             type=ref,event=branch
