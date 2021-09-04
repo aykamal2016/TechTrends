@@ -41,7 +41,7 @@ jobs:
         name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
-          images:aykamal/techtrends:v1
+          images:aykamal/techtrends
                   
       -
         name: Build and push
@@ -51,5 +51,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: v1.0.0 #${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
           #${{ steps.meta.outputs.tags }}
