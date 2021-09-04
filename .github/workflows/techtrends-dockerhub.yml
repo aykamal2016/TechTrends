@@ -41,7 +41,7 @@ jobs:
         name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
-          images:aykamal/techtrends
+          images:aykamal/techtrends:v1.0
           tags:|
             type=ref,event=branch
             type=ref,event=pr
