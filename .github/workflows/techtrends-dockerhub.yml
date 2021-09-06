@@ -40,28 +40,36 @@ jobs:
            password: ${{ secrets.DOCKERHUB_PASSWORD }}
           
      
-      -
-         name: Build and push
-         uses: docker/build-push-action@v2
-         with:
-               context: .
-               file: ./Dockerfile
-               images: aykamal/techtrends
-               platforms: linux/amd64
-               push: true
-               tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
 #       -
+#          name: Build and push
+#          uses: docker/build-push-action@v2
+#          with:
+#                context: .
+#                file: ./Dockerfile
+#                images: aykamal/techtrends
+#                platforms: linux/amd64
+#                push: true
+#                tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+# #       -
 #        name: echo variables
 #        run: echo "Hello MINOR= $MINOR MAJOR= $MAJOR"
 #        env:
 #           MINOR: ${{ secrets.MINOR }}
 #           MAJOR: ${{ secrets.MAJOR }}
-         
+  # get last tag
+      -
+       name: echo variables 2
+        
+       run: |
+         last=$(git describe --abbrev=0 --tags)
+         git tag $(($last + 1))
+         git push origin $(($last + 1))  
+         echo $(($last + 1)) 
       -
        name: Update Minor version
        uses: hmanzur/actions-set-secret@v2.0.0
        with:
         name: 'MINOR'
-        value: $((${{ secrets.MINOR }}+1))
+        value: ${{ secrets.MINOR }}+1
         repository: aykamal2016/TechTrends
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
