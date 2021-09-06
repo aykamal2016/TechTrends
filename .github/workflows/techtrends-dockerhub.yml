@@ -50,12 +50,12 @@ jobs:
                platforms: linux/amd64
                push: true
                tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
-      -
-       name: echo variables
-       run: echo "Hello MINOR= $MINOR MAJOR= $MAJOR"
-       env:
-          MINOR: ${{ secrets.MINOR }}
-          MAJOR: ${{ secrets.MAJOR }}
+#       -
+#        name: echo variables
+#        run: echo "Hello MINOR= $MINOR MAJOR= $MAJOR"
+#        env:
+#           MINOR: ${{ secrets.MINOR }}
+#           MAJOR: ${{ secrets.MAJOR }}
          
       -
        name: Update Minor version
