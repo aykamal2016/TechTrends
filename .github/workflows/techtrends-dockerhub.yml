@@ -9,8 +9,6 @@ name: TechTrends - Package with Docker
 on:
   push:
     branches: [ main ]
-    tags:
-    - 'v*'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -37,15 +35,15 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          #${{ secrets.DOCKERHUB_USERNAME }}
-          username: aykamal 
-          password: Asdzxcqwe@123 
-          #${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-          images:aykamal/techtrends
+          
+          username: ${{ secrets.DOCKERHUB_USERNAME }} 
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          
+     # -
+       # name: Docker meta
+        #id: meta
+        #uses: docker/metadata-action@v3
+         # images:aykamal/techtrends
      
       -
         name: Build and push
@@ -53,7 +51,16 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          images: aykamal/techtrends
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: techtrend-master-:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           #${{ steps.meta.outputs.tags }}
+      -
+       name: Update Minor version
+       uses: hmanzur/actions-set-secret@v2.0.0
+       with:
+        name: 'MINOR'
+        value: $((${{ secrets.MINOR }}+1))
+        repository: aykamal/TechTrends
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
