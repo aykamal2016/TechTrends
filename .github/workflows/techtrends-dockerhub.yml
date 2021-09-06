@@ -39,11 +39,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }} 
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           
-     # -
-       # name: Docker meta
-        #id: meta
-        #uses: docker/metadata-action@v3
-         # images:aykamal/techtrends
      
       -
          name: Build and push
