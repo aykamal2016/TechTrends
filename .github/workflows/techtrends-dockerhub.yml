@@ -55,7 +55,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
-          #${{ steps.meta.outputs.tags }}
+          
       -
        name: Update Minor version
        uses: hmanzur/actions-set-secret@v2.0.0
