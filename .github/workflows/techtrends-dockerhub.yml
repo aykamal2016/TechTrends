@@ -53,6 +53,9 @@ jobs:
           
       -
        name: Update Minor version
+        run:|
+         echo $((${{ secrets.MINOR }}+1))
+         echo $({{ secrets.MAJOR }})
        uses: hmanzur/actions-set-secret@v2.0.0
        with:
         name: 'MINOR'
