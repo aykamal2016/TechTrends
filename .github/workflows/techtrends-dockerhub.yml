@@ -53,7 +53,7 @@ jobs:
       -
        name: echo variables
        run: |
-         echo $((${{ secrets.MINOR }}+1))
+         echo $({{ secrets.MINOR }})
          echo "::set-output name=action_fruit::strawberry"
          echo $({{ secrets.MAJOR }})
       -
