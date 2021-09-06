@@ -45,16 +45,16 @@ jobs:
         #uses: docker/metadata-action@v3
          # images:aykamal/techtrends
      
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          images: aykamal/techtrends
-          platforms: linux/amd64
-          push: true
-          tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+#       -
+# #         name: Build and push
+# #         uses: docker/build-push-action@v2
+# #         with:
+# #           context: .
+# #           file: ./Dockerfile
+# #           images: aykamal/techtrends
+# #           platforms: linux/amd64
+# #           push: true
+# #           tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           
       -
        name: Update Minor version
