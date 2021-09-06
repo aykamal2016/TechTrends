@@ -54,7 +54,7 @@ jobs:
           images: aykamal/techtrends
           platforms: linux/amd64
           push: true
-          tags: techtrend-master-:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+          tags: aykamal/techtrends:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           #${{ steps.meta.outputs.tags }}
       -
        name: Update Minor version
@@ -62,5 +62,5 @@ jobs:
        with:
         name: 'MINOR'
         value: $((${{ secrets.MINOR }}+1))
-        repository: aykamal/TechTrends
+        repository: aykamal2016/TechTrends
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
