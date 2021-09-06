@@ -54,7 +54,7 @@ jobs:
           images: aykamal/techtrends
           platforms: linux/amd64
           push: true
-          tags: aykamal/techtrends:${{ secrets.MAJOR }}.${{ secrets.MINOR }}
+          tags: aykamal/techtrends:v${{ secrets.MAJOR }}.${{ secrets.MINOR }}
           #${{ steps.meta.outputs.tags }}
       -
        name: Update Minor version
