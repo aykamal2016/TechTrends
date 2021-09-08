@@ -16,6 +16,10 @@ def custom_logger (name):
       consoleHandler = logging.StreamHandler(stream=sys.stdout)
       consoleHandler.setFormatter(logFormatter)
       logger.addHandler(consoleHandler)
+ # Set up stderr handler
+      stdErrHandler = logging.StreamHandler(stream=sys.stderr)  
+      stdErrHandler.setFormatter(logFormatter)
+      logger.addHandler(stdErrHandler)
 # Set up the file handler 
       fileHandler = logging.FileHandler("app.log")
       fileHandler.setFormatter(logFormatter)
