@@ -18,6 +18,7 @@ spec:
       containers:
        - imagePullPolicy: {{ .Values.image.pullPolicy }}
          name: techtrends
+         image: aykamal/techtrends:v1.0
          livenessProbe:
            initialDelaySeconds: 1
            periodSeconds: 2
