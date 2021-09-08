@@ -18,7 +18,7 @@ spec:
       containers:
        - imagePullPolicy: {{ .Values.image.pullPolicy }}
          name: techtrends
-         image: {{ .Values.image.repository }} : {{ .Values.image.tag }}
+         image: {{ .Values.image.repository }}":"{{ .Values.image.tag }}
          livenessProbe:
            initialDelaySeconds: 1
            periodSeconds: 2
