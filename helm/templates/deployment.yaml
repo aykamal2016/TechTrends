@@ -18,21 +18,21 @@ spec:
       containers:
        - imagePullPolicy: {{ .Values.image.pullPolicy }}
          name: techtrends
-      livenessProbe:
-          initialDelaySeconds: 1
-          periodSeconds: 2
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-          httpGet:
+         livenessProbe:
+           initialDelaySeconds: 1
+           periodSeconds: 2
+           timeoutSeconds: 1
+           successThreshold: 1
+           failureThreshold: 1
+           httpGet:
             path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.containerPort.port }}
-      readinessProbe:
-          initialDelaySeconds: 1
-          periodSeconds: 2
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-          httpGet:
-            path: {{ .Values.readinessProbe.path }}
-            port: {{ .Values.containerPort.port }}   
+         readinessProbe:
+           initialDelaySeconds: 1
+           periodSeconds: 2
+           timeoutSeconds: 1
+           successThreshold: 1
+           failureThreshold: 1
+           httpGet:
+             path: {{ .Values.readinessProbe.path }}
+             port: {{ .Values.containerPort.port }}   
