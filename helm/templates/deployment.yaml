@@ -27,7 +27,7 @@ spec:
            failureThreshold: 1
            httpGet:
             path: {{ .Values.livenessProbe.path }}
-            port: {{ .Values.containerPort.port }}
+            port: {{ .Values.livenessProbe.port }}
          readinessProbe:
            initialDelaySeconds: 1
            periodSeconds: 2
@@ -36,6 +36,6 @@ spec:
            failureThreshold: 1
            httpGet:
              path: {{ .Values.readinessProbe.path }}
-             port: {{ .Values.containerPort.port }}  
+             port: {{ .Values.readinessPort.port }}  
          resources:
 {{ toYaml .Values.resources | indent 12 }}
