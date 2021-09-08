@@ -22,7 +22,7 @@ spec:
          #ports:
         #- containerPort: {{ .Values.containerPort.port }}
      # resources:
-#{{ toYaml .Values.resources | indent 12 }}
+# {{ toYaml .Values.resources | indent 12 }}
         livenessProbe:
           initialDelaySeconds: 1
           periodSeconds: 2
