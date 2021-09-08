@@ -9,7 +9,7 @@ service:
 
 image:
   repository: aykamal/techtrends 
-  tag: v1.0
+  tag: latest
   pullPolicy: IfNotPresent
 
 replicaCount: 1
