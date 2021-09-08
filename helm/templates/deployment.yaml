@@ -16,14 +16,9 @@ spec:
         app: techtrends
     spec:
       containers:
-      #- image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
        - imagePullPolicy: {{ .Values.image.pullPolicy }}
          name: techtrends
-         #ports:
-        #- containerPort: {{ .Values.containerPort.port }}
-     # resources:
-# {{ toYaml .Values.resources | indent 12 }}
-        livenessProbe:
+      livenessProbe:
           initialDelaySeconds: 1
           periodSeconds: 2
           timeoutSeconds: 1
@@ -32,7 +27,7 @@ spec:
           httpGet:
             path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.containerPort.port }}
-         readinessProbe:
+      readinessProbe:
           initialDelaySeconds: 1
           periodSeconds: 2
           timeoutSeconds: 1
