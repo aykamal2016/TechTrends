@@ -26,10 +26,7 @@ jobs:
        -
         name: echo variables 2
         run: |
-            last=$(git describe --abbrev=0 --tags)
-            git tag $(($last + 1))
-            git push origin $(($last + 1))  
-            echo $(($last + 1)) 
+              echo $GITHUB_SHA
               
       
         
