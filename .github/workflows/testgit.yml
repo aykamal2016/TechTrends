@@ -34,7 +34,7 @@ jobs:
           id: meta
           uses: docker/metadata-action@v3
           with:
-             images: aykamal/techtrends
+             images: aykamal/techtrends:v1.0
              tags: |
               type=semver,pattern={{major}}.{{minor}}
               
