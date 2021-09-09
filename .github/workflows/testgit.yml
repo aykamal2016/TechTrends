@@ -20,13 +20,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
        
-       -
-        name: Checkouts
-        uses: actions/checkout@v2
+      # -
+       # name: Checkouts
+       # uses: actions/checkout@v2
        -
         name: echo variables 2
         run: |
               echo $GITHUB_REF
+       -     
+          name: Docker meta
+          id: meta
+          uses: docker/metadata-action@v3
+          with:
+             images: aykamal/Techtrends:v1.0
               
       
         
