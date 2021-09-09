@@ -19,6 +19,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+       
+       -
+        name: Checkouts
+        uses: actions/checkout@v2
        -
         name: echo variables 2
          run:|
