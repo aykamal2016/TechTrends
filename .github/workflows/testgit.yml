@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
        -
         name: echo variables 2
-         run:|
+        run: |
             last=$(git describe --abbrev=0 --tags)
             git tag $(($last + 1))
             git push origin $(($last + 1))  
