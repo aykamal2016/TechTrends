@@ -32,7 +32,9 @@ jobs:
           id: meta
           uses: docker/metadata-action@v3
           with:
-             images: aykamal/Techtrends:v1.0
+             images: aykamal/techtrends
+             tags: |
+              type=sha
               
       
         
