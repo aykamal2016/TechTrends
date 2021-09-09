@@ -26,7 +26,7 @@ jobs:
        -
         name: echo variables 2
         run: |
-              echo $GITHUB_SHA
+              echo $GITHUB_REF
               
       
         
