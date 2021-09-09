@@ -36,6 +36,6 @@ spec:
            failureThreshold: 1
            httpGet:
              path: {{ .Values.readinessProbe.path }}
-             port: {{ .Values.readinessPort.port }}  
+             port: {{ .Values.readinessProbe.port }}  
          resources:
 {{ toYaml .Values.resources | indent 12 }}
