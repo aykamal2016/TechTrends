@@ -34,7 +34,7 @@ jobs:
           with:
              images: aykamal/techtrends
              tags: |
-              type=sha
+              type=semver,pattern={{major}}.{{minor}}
               
       
         
